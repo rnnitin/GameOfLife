@@ -6,7 +6,7 @@ public class Constants {
 	private Constants() {}
 	
 	static final String WINDOW_TITLE = "Game of life";
-	static final int MAXX = 1050;
+	static final int MAXX = 750;
 	static final int MAXY = 600;
 	static final int BORDERGAP = 15;
 	static final int CELLW = 5;
@@ -18,6 +18,5 @@ public class Constants {
 	static final int INIT_MAX_LIVE_CELLS_PERCENT = 20;
 	static final int INIT_MIN_LIVE_CELLS_PERCENT = 1;
 	
-	static Color ALIVE_COLOR = Color.MAGENTA;
 	static final Color DEAD_COLOR = Color.WHITE;
 }

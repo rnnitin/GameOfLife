@@ -47,7 +47,7 @@ public class GOLMain {
 	}
 	
 	private static void changeAliveColor() {
-		Constants.ALIVE_COLOR = new Color((int) (Math.random() * 255), (int) (Math.random() * 255),
+		GOLGraphicsController.ALIVE_COLOR = new Color((int) (Math.random() * 255), (int) (Math.random() * 255),
 				(int) (Math.random() * 255));
 	}
 	

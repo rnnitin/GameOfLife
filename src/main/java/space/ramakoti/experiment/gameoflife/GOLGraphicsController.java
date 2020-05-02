@@ -1,12 +1,14 @@
 package space.ramakoti.experiment.gameoflife;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
 public class GOLGraphicsController extends Canvas {
 	private static final long serialVersionUID = 5270417182943669752L;
+	static Color ALIVE_COLOR = Color.MAGENTA;
 
 	private static GOLGraphicsController _instance = null;
 
@@ -35,7 +37,7 @@ public class GOLGraphicsController extends Canvas {
 					- Constants.BORDERGAP; y += Constants.CELLH + 2*Constants.CELL_BORDER_THINKNESS, cellY++) {
 				CellState currCellState = inMemGrid.getCellState(cellX, cellY);
 				if (currCellState == CellState.ALIVE) {
-					g.setColor(Constants.ALIVE_COLOR);
+					g.setColor(ALIVE_COLOR);
 				}
 				g.drawRect(x, y, Constants.CELLW, Constants.CELLH);
 				g.fillRect(x+Constants.CELL_BORDER_THINKNESS, y + Constants.CELL_BORDER_THINKNESS, Constants.CELLW, Constants.CELLH);
