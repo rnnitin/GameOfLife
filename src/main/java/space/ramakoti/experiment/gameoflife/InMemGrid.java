@@ -8,8 +8,6 @@ public class InMemGrid {
 		double ratioAlive = (Math.random()
 				* (Constants.INIT_MAX_LIVE_CELLS_PERCENT - Constants.INIT_MIN_LIVE_CELLS_PERCENT)
 				+ Constants.INIT_MIN_LIVE_CELLS_PERCENT) / 100d;
-//		System.out.println("--------------------------------------------------------------------");
-//		System.out.println("Curr net ratioAlive = " + ratioAlive);
 		for (int x = 0; x < Constants.NUM_CELLS_X_AXIS; x++) {
 			for (int y = 0; y < Constants.NUM_CELLS_Y_AXIS; y++) {
 				double randVal = Math.random();
@@ -17,7 +15,6 @@ public class InMemGrid {
 			}
 		}
 		genCount = 0;
-
 	}
 
 	public CellState getCellState(int x, int y) {
@@ -61,6 +58,7 @@ public class InMemGrid {
 			return this.grid[x - 1][y].getValue() + this.grid[x - 1][y - 1].getValue() + this.grid[x][y - 1].getValue()
 					+ this.grid[x + 1][y].getValue() + this.grid[x + 1][y - 1].getValue();
 		}
+		
 		return this.grid[x - 1][y].getValue() + this.grid[x - 1][y - 1].getValue() + this.grid[x - 1][y + 1].getValue()
 				+ this.grid[x][y - 1].getValue() + this.grid[x][y + 1].getValue() + this.grid[x + 1][y].getValue()
 				+ this.grid[x + 1][y - 1].getValue() + this.grid[x + 1][y + 1].getValue();
@@ -77,7 +75,7 @@ public class InMemGrid {
 				}
 			}
 		}
-//		System.out.println("Gen #" + ++genCount);
+		++this.genCount;
 	}
 
 	public int gridSum() {
@@ -88,6 +86,10 @@ public class InMemGrid {
 			}
 		}
 		return sum;
+	}
+
+	public int getGenCount() {
+		return genCount;
 	}
 
 	@Override

@@ -18,17 +18,17 @@ public class GOLMain {
 
 		HashSet<Integer> gridCkSumSet = new HashSet<Integer>();
 		while (true) {
-			sleepInMills(200);
+			sleepInMills(100);
 			
 			int hashCode = gridInMem.hashCode();
 			if (gridCkSumSet.contains(hashCode)) {
-				sleepInMills(2000);
+				sleepInMills(1000);
 				
 				gridInMem.init();
 				changeAliveColor();
 				gController.paintGrid(g, gridInMem);
 				
-				sleepInMills(500);
+				sleepInMills(200);
 				
 				gridCkSumSet.clear();
 			}
