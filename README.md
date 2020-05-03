@@ -14,7 +14,3 @@ Steps to Run
 ![](samples/Screenshot03.png)
 ![](samples/Screenshot04.png)
 ![](samples/Screenshot05.png)
-![](samples/Screenshot06.png)
-![](samples/Screenshot07.png)
-![](samples/Screenshot08.png)
-![](samples/Screenshot09.png)

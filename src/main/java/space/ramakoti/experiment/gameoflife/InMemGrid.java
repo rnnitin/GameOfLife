@@ -17,7 +17,7 @@ public class InMemGrid {
 			}
 		}
 		genCount = 0;
-		
+
 	}
 
 	public CellState getCellState(int x, int y) {
@@ -69,7 +69,7 @@ public class InMemGrid {
 	public void computeNextGen() {
 		for (int x = 0; x < Constants.NUM_CELLS_X_AXIS; x++) {
 			for (int y = 0; y < Constants.NUM_CELLS_Y_AXIS; y++) {
-				if (this.grid[x][y] == CellState.ALIVE && numNeibhorsAlive(x, y) < 2) {
+				if (this.grid[x][y] == CellState.ALIVE && (numNeibhorsAlive(x, y) < 2 || numNeibhorsAlive(x, y) > 2)) {
 					this.grid[x][y] = CellState.DEAD;
 				}
 				if (this.grid[x][y] == CellState.DEAD && numNeibhorsAlive(x, y) == 3) {
@@ -89,7 +89,7 @@ public class InMemGrid {
 		}
 		return sum;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		StringBuffer sb = new StringBuffer();
